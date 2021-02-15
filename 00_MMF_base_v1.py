@@ -13,6 +13,12 @@ def not_blank(prompt, error_message):
         response = input("\n" + error_message + "\n" + prompt)
     return response
 
+# experimental constants
+# Initial number of tickets
+TICKETS = 5
+# Number of tickets sold per sale
+TICKETS_SOLD = 1
+
 
 # *********** Main Routine ***********
 
@@ -22,18 +28,49 @@ def not_blank(prompt, error_message):
 
 # Loop to get ticket details
 
-# >>>> Get name (can't be blank)
-name = not_blank("What is your name? ", "Sorry, that's an invalid input. Please enter your name")
 
-# >>>> Get age (between 12 and 130)
+# Keeps selling tickets until they run out
+tickets = TICKETS
+while tickets > 0:
+    name = not_blank("\033[1mName: \033[0m", "Sorry, that's an invalid input. Please enter your name")
+    # Exit code
+    if name == "xxx":
+        # Stop sales then give sales information
+        print("\nTickets sold: {}\nTickets left: {}".format(TICKETS - tickets, tickets))
+        break
+    else:
+        # Reduce one ticket from total
+        tickets -= TICKETS_SOLD
+        # Tells user how many tickets were sold (useful for later on)
+        if TICKETS_SOLD == 1:
+            # Ticket rather than ticket"s"
+            plural = ""
+        else:
+            # Plural for ticket"s"
+            plural = "s"
+        print("\033[3mSold {} ticket{} to \"{}\"\033[0m".format(TICKETS_SOLD, plural, name))
+        # No more tickets available
+        if tickets == 0:
+            print("All tickets have been sold, no more are available.")
+        # Warn user when there is only one ticket left
+        elif tickets == 1:
+            print("*** Only ONE ticket left ***\n")
+        # Give user number of tickets left
+        else:
+            print("Ticket(s) left: {}\n".format(tickets))
 
-# >>>> Calculate ticket price
+    # >>>> Get name (can't be blank)
 
-# >>>> Loop to ask for snacks
 
-# >>>> Calculate snack price
+    # >>>> Get age (between 12 and 130)
 
-# >>>> ask for payment method (and apply surcharge if necessary)
+    # >>>> Calculate ticket price
+
+    # >>>> Loop to ask for snacks
+
+    # >>>> Calculate snack price
+
+    # >>>> ask for payment method (and apply surcharge if necessary)
 
 
 # Calculate Total sales and profit
