@@ -1,8 +1,6 @@
 # import statements
 
 
-# functions go here
-
 # Function checks for blank input
 def not_blank(prompt, error_message):
     # Take input
@@ -13,11 +11,37 @@ def not_blank(prompt, error_message):
         response = input("\n" + error_message + "\n" + prompt)
     return response
 
+
+# Integer checking function
+def int_check(text, lower_bound, upper_bound, too_low_error, too_high_error, conversion_error, affirmative_message):
+    try:
+        # Convert to integer
+        number = int(text)
+        # If number is higher than lower boundary
+        if lower_bound <= number:
+            # if number is lower than upper boundary
+            if number <= upper_bound:
+                # number is within boundaries
+                return [affirmative_message, True, 3]
+            else:
+                # number is higher than upper boundary
+                return [too_high_error, False, 1]
+        else:
+            # number is lower than lower boundary
+            return [too_low_error, False, 1]
+    except ValueError:
+        # Input is either pure string or float
+        return [conversion_error, False, 2]
+
+
 # experimental constants
 # Initial number of tickets
 TICKETS = 5
 # Number of tickets sold per sale
 TICKETS_SOLD = 1
+
+# Ready-to-use variables
+result = []
 
 
 # *********** Main Routine ***********
@@ -38,26 +62,39 @@ while tickets > 0:
         # Stop sales then give sales information
         print("\nTickets sold: {}\nTickets left: {}".format(TICKETS - tickets, tickets))
         break
+    valid = False
+    while not valid:
+        age_raw = input("\033[1mAge: \033[0m")
+        result = int_check(age_raw, 12, 130, "You are too young.",
+                           "You are too old - please contact administration for "
+                           "further enquiries.", "Please enter your age (as a whole number)",
+                           "You are eligible to buy a ticket.")
+        print("\033[3m" + result[0] + "\033[0m\n")
+        if result[2] == 2:
+            valid = False
+        else:
+            valid = True
     else:
-        # Reduce one ticket from total
-        tickets -= TICKETS_SOLD
-        # Tells user how many tickets were sold (useful for later on)
-        if TICKETS_SOLD == 1:
-            # Ticket rather than ticket"s"
-            plural = ""
-        else:
-            # Plural for ticket"s"
-            plural = "s"
-        print("\033[3mSold {} ticket{} to \"{}\"\033[0m".format(TICKETS_SOLD, plural, name))
-        # No more tickets available
-        if tickets == 0:
-            print("All tickets have been sold, no more are available.")
-        # Warn user when there is only one ticket left
-        elif tickets == 1:
-            print("*** Only ONE ticket left ***\n")
-        # Give user number of tickets left
-        else:
-            print("Ticket(s) left: {}\n".format(tickets))
+        if result[2] == 3:
+            # Reduce one ticket from total
+            tickets -= TICKETS_SOLD
+            # Tells user how many tickets were sold (useful for later on)
+            if TICKETS_SOLD == 1:
+                # Ticket rather than ticket"s"
+                plural = ""
+            else:
+                # Plural for ticket"s"
+                plural = "s"
+            print("\033[3mSold {} ticket{} to \"{}\"\033[0m".format(TICKETS_SOLD, plural, name))
+            # No more tickets available
+            if tickets == 0:
+                print("All tickets have been sold, no more are available.")
+            # Warn user when there is only one ticket left
+            elif tickets == 1:
+                print("*** Only ONE ticket left ***\n")
+            # Give user number of tickets left
+            else:
+                print("Ticket(s) left: {}\n".format(tickets))
 
     # >>>> Get name (can't be blank)
 

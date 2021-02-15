@@ -1,4 +1,4 @@
-# Component 2C: Loop component (Visual edits)
+# Component 2D: Loop component (Visual edits)
 
 # Set initial number of tickets as a constant
 TICKETS = 5
