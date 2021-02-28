@@ -22,7 +22,7 @@ def int_check(text, lower_bound, upper_bound, too_low_error, too_high_error, con
             # if number is lower than upper boundary
             if number <= upper_bound:
                 # number is within boundaries
-                return [affirmative_message, True, 3]
+                return [affirmative_message, True, 3, number]
             else:
                 # number is higher than upper boundary
                 return [too_high_error, False, 1]
@@ -42,6 +42,7 @@ TICKETS_SOLD = 1
 
 # Ready-to-use variables
 result = []
+ticket_sales = 0
 
 
 # *********** Main Routine ***********
@@ -60,7 +61,10 @@ while tickets > 0:
     # Exit code
     if name == "xxx":
         # Stop sales then give sales information
-        print("\nTickets sold: {}\nTickets left: {}".format(TICKETS - tickets, tickets))
+        ticket_profit = ticket_sales - (5*(TICKETS - tickets))
+        print("\nTickets sold: {}\nTickets left: {}\n"
+              "Ticket sales = ${:.2f}\nTicket profit = ${:.2f}"
+              "".format(TICKETS - tickets, tickets, ticket_sales, ticket_profit))
         break
     valid = False
     while not valid:
@@ -72,6 +76,21 @@ while tickets > 0:
         print("\033[3m" + result[0] + "\033[0m\n")
         if result[2] == 2:
             valid = False
+        elif result[2] == 3:
+            age = result[3]
+            # Children/teens
+            if 12 <= age <= 15:
+                ticket_price = 7.5
+            # Adults
+            elif 16 <= age <= 64:
+                ticket_price = 10.5
+            # Seniors
+            else:
+                ticket_price = 6.5
+            # Print ticket price
+            ticket_sales += ticket_price
+            print("Ticket price = ${:.2f}\n".format(ticket_price))
+            valid = True
         else:
             valid = True
     else:
@@ -95,13 +114,6 @@ while tickets > 0:
             # Give user number of tickets left
             else:
                 print("Ticket(s) left: {}\n".format(tickets))
-
-    # >>>> Get name (can't be blank)
-
-
-    # >>>> Get age (between 12 and 130)
-
-    # >>>> Calculate ticket price
 
     # >>>> Loop to ask for snacks
 
