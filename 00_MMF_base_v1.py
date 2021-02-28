@@ -1,4 +1,36 @@
 # import statements
+from tkinter import *
+from tkinter.font import Font
+import time
+
+
+# Function to return data from "Choosing snacks" interactive
+def output_data():
+    popcorn = sp_1.get()
+    mms = sp_2.get()
+    pita_chips = sp_3.get()
+    orange_juice = sp_4.get()
+    water = sp_5.get()
+    if popcorn == "0" and mms == "0" and pita_chips == "0" and orange_juice == "0" and water == "0":
+        print("\033[3mYou have not chosen any snacks\033[0m\n")
+    else:
+        print("\033[1m\nSnacks chosen:\033[0m\nPopcorn: {}\nM&M's: {}\nPita chips: {}\nOrange Juice: {}\nWater: {}\n".
+              format(popcorn, mms, pita_chips, orange_juice, water))
+    root.destroy()
+
+
+# Generic yes/no checking function
+def yes_no_checker(question, error_message):
+    valid_two = False
+    while not valid_two:
+        answer = input(question)
+        answer = answer.lower()
+        if answer[0] == "y":
+            return "Yes"
+        elif answer[0] == "n":
+            return "No"
+        else:
+            print(error_message)
 
 
 # Function checks for blank input
@@ -95,6 +127,89 @@ while tickets > 0:
             valid = True
     else:
         if result[2] == 3:
+            # Check if user wants snacks
+            snacks = yes_no_checker("\nDo you want to order snacks? ",
+                                    "\033[3mThat's not a valid answer. Choose either yes"
+                                    " or no\033[0m")
+            print("You chose \"{}\" - a pop-up will open up shortly. \033[1mCheck your TASKBAR for the pop-up.\033[0m".format(snacks))
+            if snacks == "Yes":
+                # ###############################
+                # ###############################
+                # ###############################
+                # ###############################
+                # ###############################
+                root = Tk()
+
+                root.title("Choose your snacks")
+                root.geometry("350x600")
+
+                # Title
+                x = Label(root, text="", font="50")
+                x.pack()
+                n = Label(root, text="Choose your snacks:", font=Font(family="Helvetica", weight="bold", size=23),
+                          background="red",
+                          foreground="white")
+                n.pack()
+
+                # Blank line
+                x = Label(root, text="", font="50")
+                x.pack()
+
+                # Popcorn
+                w = Label(root, text="Popcorn - $2.50 each", font="50")
+                w.pack()
+                sp_1 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+                sp_1.pack()
+
+                # Blank line
+                x = Label(root, text="", font="50")
+                x.pack()
+
+                # M&M's
+                w = Label(root, text="M&M's - $3.00 each", font="50")
+                w.pack()
+                sp_2 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+                sp_2.pack()
+
+                # Blank line
+                x = Label(root, text="", font="50")
+                x.pack()
+
+                # Pita chips
+                w = Label(root, text="Pita chips - $4.50 each", font="50")
+                w.pack()
+                sp_3 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+                sp_3.pack()
+
+                # Blank line
+                x = Label(root, text="", font="50")
+                x.pack()
+
+                # Orange Juice
+                w = Label(root, text="Orange juice - $3.25 each", font="50")
+                w.pack()
+                sp_4 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+                sp_4.pack()
+
+                # Blank line
+                x = Label(root, text="", font="50")
+                x.pack()
+
+                # Water
+                w = Label(root, text="Water - $2.00 each", font="50")
+                w.pack()
+                sp_5 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+                sp_5.pack()
+
+                btn = Button(root, text="Confirm", command=output_data)
+                btn.pack(side="bottom", pady=30)
+                root.mainloop()
+            elif snacks == "No":
+                print("\033[3mSkipping snacks\033[0m")
+            # ###############################
+            # ###############################
+            # ###############################
+            # ###############################
             # Reduce one ticket from total
             tickets -= TICKETS_SOLD
             # Tells user how many tickets were sold (useful for later on)
@@ -115,7 +230,6 @@ while tickets > 0:
             else:
                 print("Ticket(s) left: {}\n".format(tickets))
 
-    # >>>> Loop to ask for snacks
 
     # >>>> Calculate snack price
 

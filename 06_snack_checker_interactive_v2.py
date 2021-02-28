@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.font import Font
 
 
-def some_function():
+def output_data():
     popcorn = sp_1.get()
     mms = sp_2.get()
     pita_chips = sp_3.get()
@@ -79,8 +79,9 @@ sp_5 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weigh
 sp_5.pack()
 
 
-btn = Button(root, text="Confirm", command=some_function)
+btn = Button(root, text="Confirm", command=output_data)
 btn.pack(side="bottom", pady=30)
 
 
 root.mainloop()
+
