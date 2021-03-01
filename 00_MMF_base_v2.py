@@ -62,6 +62,11 @@ def output_data():
         user_snack_temp_list = snacks_tool(popcorn, mms, pita_chips, orange_juice, water, total_snack_profit)
         print("\nSnacks price: ${:.2f}".format(user_snack_temp_list[0]))
     root.destroy()
+    popcorn_total.append(popcorn)
+    mms_total.append(mms)
+    pita_chips_total.append(pita_chips)
+    orange_juice_total.append(orange_juice)
+    water_total.append(water)
 
 
 # Generic yes/no checking function
@@ -119,6 +124,11 @@ def int_check(text, lower_bound, upper_bound, too_low_error, too_high_error, con
 movie_data_dict = {
     "Name": all_names,
     "Ticket price": all_tickets,
+    "Popcorn": popcorn_total,
+    "M&M's": mms_total,
+    "Pita chips": pita_chips_total,
+    "Orange juice": orange_juice_total,
+    "Water": water_total,
 }
 
 # Ask user if they have used the program before & show instructions if necessary

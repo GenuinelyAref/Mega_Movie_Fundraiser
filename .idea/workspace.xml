@@ -43,7 +43,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.06_snack_checker_interactive_v3">
+  <component name="RunManager" selected="Python.00_MMF_base_v2">
     <configuration name="00_MMF_base_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Mega_Movie_Fundraiser" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,7 +65,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="05_yes_no_checker" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="00_MMF_base_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Mega_Movie_Fundraiser" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,7 +77,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_yes_no_checker.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_MMF_base_v2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.00_MMF_base_v2" />
         <item itemvalue="Python.00_MMF_base_v1" />
         <item itemvalue="Python.06_snack_checker_interactive_v3" />
         <item itemvalue="Python.06_snack_checker_interactive_v2" />
         <item itemvalue="Python.tkinter_trialling" />
-        <item itemvalue="Python.05_yes_no_checker" />
       </list>
     </recent_temporary>
   </component>
