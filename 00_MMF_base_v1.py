@@ -1,21 +1,36 @@
 # import statements
 from tkinter import *
 from tkinter.font import Font
-import time
+
+snack_profit = 0.2
+total_snack_profit = 5
+a_price = 2.5
+b_price = 3
+c_price = 4.5
+d_price = 3.25
+e_price = 2
 
 
-# Function to return data from "Choosing snacks" interactive
+def snacks_tool(a, b, c, d, e, current_total):
+    snack_payment = (a*a_price) + (b*b_price) + (c*c_price) + (d*d_price) + (e*e_price)
+    user_snack_profit = snack_payment*0.2
+    current_total += user_snack_profit
+    return [snack_payment, user_snack_profit, current_total]
+
+
 def output_data():
-    popcorn = sp_1.get()
-    mms = sp_2.get()
-    pita_chips = sp_3.get()
-    orange_juice = sp_4.get()
-    water = sp_5.get()
-    if popcorn == "0" and mms == "0" and pita_chips == "0" and orange_juice == "0" and water == "0":
+    popcorn = int(sp_1.get())
+    mms = int(sp_2.get())
+    pita_chips = int(sp_3.get())
+    orange_juice = int(sp_4.get())
+    water = int(sp_5.get())
+    if popcorn == 0 and mms == 0 and pita_chips == 0 and orange_juice == 0 and water == 0:
         print("\033[3mYou have not chosen any snacks\033[0m\n")
     else:
-        print("\033[1m\nSnacks chosen:\033[0m\nPopcorn: {}\nM&M's: {}\nPita chips: {}\nOrange Juice: {}\nWater: {}\n".
+        print("\033[1m\nSnacks chosen:\033[0m\nPopcorn: {}\nM&M's: {}\nPita chips: {}\nOrange Juice: {}\nWater: {}".
               format(popcorn, mms, pita_chips, orange_juice, water))
+        user_snack_temp_list = snacks_tool(popcorn, mms, pita_chips, orange_juice, water, total_snack_profit)
+        print("\nSnacks price: ${:.2f}".format(user_snack_temp_list[0]))
     root.destroy()
 
 
@@ -131,8 +146,9 @@ while tickets > 0:
             snacks = yes_no_checker("\nDo you want to order snacks? ",
                                     "\033[3mThat's not a valid answer. Choose either yes"
                                     " or no\033[0m")
-            print("You chose \"{}\" - a pop-up will open up shortly. \033[1mCheck your TASKBAR for the pop-up.\033[0m".format(snacks))
             if snacks == "Yes":
+                print("You chose \"{}\" - a pop-up will open up shortly. \033[1mCheck your TASKBAR for the pop-up."
+                      "\033[0m".format(snacks))
                 # ###############################
                 # ###############################
                 # ###############################
@@ -219,6 +235,7 @@ while tickets > 0:
             else:
                 # Plural for ticket"s"
                 plural = "s"
+            print()
             print("\033[3mSold {} ticket{} to \"{}\"\033[0m".format(TICKETS_SOLD, plural, name))
             # No more tickets available
             if tickets == 0:
@@ -229,7 +246,6 @@ while tickets > 0:
             # Give user number of tickets left
             else:
                 print("Ticket(s) left: {}\n".format(tickets))
-
 
     # >>>> Calculate snack price
 
