@@ -61,12 +61,12 @@ def output_data():
               format(popcorn, mms, pita_chips, orange_juice, water))
         user_snack_temp_list = snacks_tool(popcorn, mms, pita_chips, orange_juice, water, total_snack_profit)
         print("\nSnacks price: ${:.2f}".format(user_snack_temp_list[0]))
-    root.destroy()
     popcorn_total.append(popcorn)
     mms_total.append(mms)
     pita_chips_total.append(pita_chips)
     orange_juice_total.append(orange_juice)
     water_total.append(water)
+    root.destroy()
 
 
 # Generic yes/no checking function
@@ -181,8 +181,7 @@ while tickets > 0:
                                     "\033[3mThat's not a valid answer. Choose either yes"
                                     " or no\033[0m")
             if snacks == "Yes":
-                print("You chose \"{}\" - a pop-up will open up shortly. \033[1mCheck your TASKBAR for the pop-up."
-                      "\033[0m".format(snacks))
+                print("You chose \"{}\" - a pop-up will open up shortly".format(snacks))
                 # ###############################
                 # ###############################
                 # ###############################
@@ -296,6 +295,7 @@ while tickets > 0:
 
 # Print details
 movie_frame = pandas.DataFrame(movie_data_dict)
+movie_frame = movie_frame.set_index("Name")
 print()
 print(movie_frame)
 

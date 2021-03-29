@@ -1,4 +1,4 @@
-# Same as v2 but with user feedback on snacks cost
+# Same as v3 but
 
 from tkinter import *
 from tkinter.font import Font
@@ -39,6 +39,9 @@ root = Tk()
 
 root.title("Choose your snacks")
 root.geometry("350x600")
+root.lift()
+root.attributes("-topmost", True)
+root.attributes("-topmost", False)
 
 # Title
 x = Label(root, text="", font="50")

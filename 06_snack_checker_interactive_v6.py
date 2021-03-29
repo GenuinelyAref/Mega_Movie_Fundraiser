@@ -1,4 +1,4 @@
-# Same as v2 but with user feedback on snacks cost
+# Same as v3 but
 
 from tkinter import *
 from tkinter.font import Font
@@ -39,6 +39,9 @@ root = Tk()
 
 root.title("Choose your snacks")
 root.geometry("350x600")
+root.lift()
+root.attributes("-topmost", True)
+root.attributes("-topmost", False)
 
 # Title
 x = Label(root, text="", font="50")
@@ -54,7 +57,8 @@ x.pack()
 # Popcorn
 w = Label(root, text="Popcorn - $2.50 each", font="50")
 w.pack()
-sp_1 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+sp_1 = Spinbox(root, from_=0, to=5, width=2, state="readonly",
+               font=Font(family="Helvetica", weight="bold", size=20))
 sp_1.pack()
 
 # Blank line
@@ -64,7 +68,8 @@ x.pack()
 # M&M's
 w = Label(root, text="M&M's - $3.00 each", font="50")
 w.pack()
-sp_2 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+sp_2 = Spinbox(root, from_=0, to=5, width=2, state="readonly",
+               font=Font(family="Helvetica", weight="bold", size=20))
 sp_2.pack()
 
 # Blank line
@@ -74,7 +79,8 @@ x.pack()
 # Pita chips
 w = Label(root, text="Pita chips - $4.50 each", font="50")
 w.pack()
-sp_3 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+sp_3 = Spinbox(root, from_=0, to=5, width=2, state="readonly",
+               font=Font(family="Helvetica", weight="bold", size=20))
 sp_3.pack()
 
 # Blank line
@@ -84,7 +90,8 @@ x.pack()
 # Orange Juice
 w = Label(root, text="Orange juice - $3.25 each", font="50")
 w.pack()
-sp_4 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+sp_4 = Spinbox(root, from_=0, to=5, width=2, state="readonly",
+               font=Font(family="Helvetica", weight="bold", size=20))
 sp_4.pack()
 
 # Blank line
@@ -94,7 +101,8 @@ x.pack()
 # Water
 w = Label(root, text="Water - $2.00 each", font="50")
 w.pack()
-sp_5 = Spinbox(root, from_=0, to=5, width=2, font=Font(family="Helvetica", weight="bold", size=20))
+sp_5 = Spinbox(root, from_=0, to=5, width=2, state="readonly",
+               font=Font(family="Helvetica", weight="bold", size=20))
 sp_5.pack()
 
 
