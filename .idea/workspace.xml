@@ -44,8 +44,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.00_MMF_base_v9">
-    <configuration name="00_MMF_base_v7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.00_MMF_base_v10">
+    <configuration name="00_MMF_base_v10" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Mega_Movie_Fundraiser" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -57,7 +57,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_MMF_base_v7.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_MMF_base_v10.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,7 +129,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="zz_tkinter_trialling" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="zz_tkinter_trialling2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Mega_Movie_Fundraiser" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,7 +141,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zz_tkinter_trialling.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zz_tkinter_trialling2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.00_MMF_base_v10" />
+        <item itemvalue="Python.zz_tkinter_trialling2" />
         <item itemvalue="Python.00_MMF_base_v9" />
         <item itemvalue="Python.zz_sandbox" />
         <item itemvalue="Python.00_MMF_base_v8" />
-        <item itemvalue="Python.zz_tkinter_trialling" />
-        <item itemvalue="Python.00_MMF_base_v7" />
       </list>
     </recent_temporary>
   </component>
