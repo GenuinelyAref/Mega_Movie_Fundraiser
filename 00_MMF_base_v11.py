@@ -411,6 +411,10 @@ movie_frame["Sub-total"] = movie_frame["Ticket price"] + movie_frame["Snacks cos
 movie_frame["Surcharge"] = round(surcharge_total*movie_frame["Sub-total"], 2)
 movie_frame["Total"] = movie_frame["Surcharge"] + movie_frame["Sub-total"]
 
+movie_frame_list = ["Ticket price", "Snacks cost", "Sub-total", "Surcharge", "Total"]
+for h in movie_frame_list:
+    movie_frame[h] = movie_frame[h].apply(monetize)
+
 pandas.set_option("display.max_columns", None)
 pandas.set_option("expand_frame_repr", False)
 
@@ -420,9 +424,21 @@ totals.extend([sum(popcorn_total), sum(mms_total), sum(pita_chips_total), sum(or
 summary_frame = pandas.DataFrame(totals_summary)
 summary_frame = summary_frame.set_index("Item")
 
+for i in range(0, 5):
+    totals_two.append(totals[i])
+for j in range(5,8):
+    n = str(summary_frame["Amount"][j])
+    n = n.strip("$")
+    n = monetize(n)
+    totals_two.append(n)
+summary_frame["Amount"] = totals_two
+
 profit_frame = pandas.DataFrame(profit_summary)
 profit_frame = profit_frame.set_index("Name")
 
+profit_frame_list = ["Snack profit", "Ticket profit", "Total profit"]
+for k in profit_frame_list:
+    profit_frame[k] = profit_frame[k].apply(monetize)
 
 print("\n\033[1mTICKET INFO\033[0m\n")
 print(movie_frame)
