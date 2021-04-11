@@ -36,6 +36,7 @@ snack_profit = []
 ticket_profit_list = []
 total_profit = []
 totals = []
+totals_two = []
 
 # VARIABLES
 # Naming constants to remove error
@@ -147,6 +148,10 @@ def output_surcharge():
     surcharge_total.append(surcharge)
     # Close popup when finished
     root.destroy()
+
+
+def monetize(x):
+    return "${:.2f}".format(float(x))
 
 
 def turn_on_button():
@@ -406,16 +411,39 @@ movie_frame["Sub-total"] = movie_frame["Ticket price"] + movie_frame["Snacks cos
 movie_frame["Surcharge"] = round(surcharge_total*movie_frame["Sub-total"], 2)
 movie_frame["Total"] = movie_frame["Surcharge"] + movie_frame["Sub-total"]
 
+movie_frame["Ticket price"] = monetize(movie_frame["Ticket price"])
+movie_frame["Snacks cost"] = monetize(movie_frame["Snacks cost"])
+movie_frame["Sub-total"] = monetize(movie_frame["Sub-total"])
+movie_frame["Surcharge"] = monetize(movie_frame["Surcharge"])
+movie_frame["Total"] = monetize(movie_frame["Total"])
+
 pandas.set_option("display.max_columns", None)
 pandas.set_option("expand_frame_repr", False)
+
 
 totals.extend([sum(popcorn_total), sum(mms_total), sum(pita_chips_total), sum(orange_juice_total), sum(water_total),
                sum(snack_profit), sum(ticket_profit_list), sum(total_profit)])
 summary_frame = pandas.DataFrame(totals_summary)
 summary_frame = summary_frame.set_index("Item")
 
+for j in range(0, 5):
+    totals_two.append(totals[j])
+
+for i in range(5,8):
+    n = str(summary_frame["Amount"][i])
+    n = n.strip("$")
+    n = monetize(n)
+    totals_two.append(n)
+
+summary_frame["Amount"] = totals_two
+
 profit_frame = pandas.DataFrame(profit_summary)
 profit_frame = profit_frame.set_index("Name")
+
+
+profit_frame["Snack profit"] = monetize(profit_frame["Snack profit"])
+profit_frame["Ticket profit"] = monetize(profit_frame["Ticket profit"])
+profit_frame["Total profit"] = monetize(profit_frame["Total profit"])
 
 print("\n\033[1mTICKET INFO\033[0m\n")
 print(movie_frame)
