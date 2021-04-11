@@ -448,3 +448,6 @@ print("\n\033[1mSUMMARY INFO\033[0m\n")
 print(summary_frame)
 
 # Output data to text file
+movie_frame.to_csv("ticket_details.csv")
+summary_frame.to_csv("totals_summary.csv")
+profit_frame.to_csv("individual_profits.csv")
