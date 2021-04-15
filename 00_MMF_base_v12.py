@@ -125,7 +125,7 @@ def yes_no_checker(question, error_message):
         try:
             if answer[0] == "y":
                 return "Yes"
-            elif answer[0] == "n":
+             elif answer[0] == "n":
                 return "No"
             else:
                 print(error_message)
