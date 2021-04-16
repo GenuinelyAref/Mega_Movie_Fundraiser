@@ -133,10 +133,6 @@ def yes_no_checker(question, error_message):
             print(error_message)
 
 
-def instructions():
-    print()
-
-
 def output_surcharge():
     # Retrieve surcharge input from tkinter popup
     surcharge = v.get()
@@ -154,8 +150,8 @@ def output_surcharge():
     root.destroy()
 
 
-def monetize(x):
-    return "${:.2f}".format(float(x))
+def monetize(number):
+    return "${:.2f}".format(float(number))
 
 
 def turn_on_button():
@@ -181,6 +177,15 @@ def not_blank(prompt, error_message):
         # Keep re-taking input until it is no longer blank
         response = input("\n" + error_message + "\n" + prompt)
     return response
+
+
+def instructions():
+    print("\033[1mWelcome to Mega Movie Fundraiser\033[0m\n\n")
+    instructions_text ="To buy a ticket for the movie fundraiser , you will need to provide your name, age, choice of" \
+                  " snacks and payment method. Please enter your real name and age, as your identity could be " \
+                  "confirmed upon request. We thank you for supporting the cause and hope that you enjoy the movie."
+    reply = not_blank("Have you used this program before?\nYes or no: ", "Sorry that is not a valid input")
+    # to continue code >>> add yes/no-checking prompt
 
 
 # Integer checking function
@@ -215,6 +220,7 @@ def int_check(text, lower_bound, upper_bound, too_low_error, too_high_error, con
 # Keeps selling tickets until they run out
 tickets = TICKETS
 while tickets > 0:
+    instructions()
     name = not_blank("\033[1mName: \033[0m", "Sorry, that's an invalid input. Please enter your name")
     # Exit code
     if name == "xxx":
@@ -430,7 +436,7 @@ summary_frame = summary_frame.set_index("Item")
 
 for i in range(0, 5):
     totals_two.append(totals[i])
-for j in range(5,8):
+for j in range(5, 8):
     n = str(summary_frame["Amount"][j])
     n = n.strip("$")
     n = monetize(n)
