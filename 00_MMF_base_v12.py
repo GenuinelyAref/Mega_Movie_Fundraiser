@@ -181,12 +181,16 @@ def not_blank(prompt, error_message):
 
 def instructions():
     print("\033[1mWelcome to Mega Movie Fundraiser\033[0m\n\n")
-    instructions_text = "To buy a ticket for the movie fundraiser , you will need to provide your name, age, choice of"\
-                        " snacks and payment method. Please enter your real name and age, as your identity could be " \
-                        "confirmed upon request. We thank you for supporting the cause and hope that you enjoy the " \
-                        "movie."
-    reply = not_blank("Have you used this program before?\nYes or no: ", "Sorry that is not a valid input")
-    # to continue code >>> add yes/no-checking prompt
+    instructions_text = "\n\033[1m<<Introduction>>\033[0m\nTo buy a ticket for the movie fundraiser ," \
+                        " you will need to provide your name, age, choice of snacks and payment method." \
+                        "\nPlease enter your real name and age, as your identity could be confirmed upon request." \
+                        " We thank you for supporting the\ncause and hope that you enjoy the movie."
+    reply = yes_no_checker("Have you used this program before?\nYes or no: ",
+                           "\033[3mThat's not a valid answer. Choose either yes or no\033[0m\n")
+    if reply == "No":
+        print(instructions_text)
+    else:
+        pass
 
 
 # Integer checking function
@@ -222,7 +226,7 @@ def int_check(text, lower_bound, upper_bound, too_low_error, too_high_error, con
 tickets = TICKETS
 while tickets > 0:
     instructions()
-    name = not_blank("\033[1mName: \033[0m", "Sorry, that's an invalid input. Please enter your name")
+    name = not_blank("\n\033[1mName: \033[0m", "Sorry, that's an invalid input. Please enter your name")
     # Exit code
     if name == "xxx":
         # Stop sales then give sales information
@@ -263,8 +267,7 @@ while tickets > 0:
         if result[2] == 3:
             # Check if user wants snacks
             snacks = yes_no_checker("\nDo you want to order snacks? ",
-                                    "\033[3mThat's not a valid answer. Choose either yes"
-                                    " or no\033[0m")
+                                    "\033[3mThat's not a valid answer. Choose either yes or no\033[0m")
             if snacks == "Yes":
                 print("You chose \"{}\" - a pop-up will open up shortly".format(snacks))
                 root = Tk()
