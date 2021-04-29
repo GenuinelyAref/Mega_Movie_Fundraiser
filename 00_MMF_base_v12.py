@@ -219,13 +219,12 @@ def int_check(text, lower_bound, upper_bound, too_low_error, too_high_error, con
 
 
 # Ask user if they have used the program before & show instructions if necessary
+instructions()
 
 # Loop to get ticket details
-
 # Keeps selling tickets until they run out
 tickets = TICKETS
 while tickets > 0:
-    instructions()
     name = not_blank("\n\033[1mName: \033[0m", "Sorry, that's an invalid input. Please enter your name")
     # Exit code
     if name == "xxx":
