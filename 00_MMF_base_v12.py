@@ -181,9 +181,10 @@ def not_blank(prompt, error_message):
 
 def instructions():
     print("\033[1mWelcome to Mega Movie Fundraiser\033[0m\n\n")
-    instructions_text ="To buy a ticket for the movie fundraiser , you will need to provide your name, age, choice of" \
-                  " snacks and payment method. Please enter your real name and age, as your identity could be " \
-                  "confirmed upon request. We thank you for supporting the cause and hope that you enjoy the movie."
+    instructions_text = "To buy a ticket for the movie fundraiser , you will need to provide your name, age, choice of"\
+                        " snacks and payment method. Please enter your real name and age, as your identity could be " \
+                        "confirmed upon request. We thank you for supporting the cause and hope that you enjoy the " \
+                        "movie."
     reply = not_blank("Have you used this program before?\nYes or no: ", "Sorry that is not a valid input")
     # to continue code >>> add yes/no-checking prompt
 
