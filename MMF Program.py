@@ -15,23 +15,24 @@ def snacks_tool(a, b, c, d, e):
 
 # Takes and processes snack data from tkinter popup
 def output_data():
-    popcorn = int(sp_1.get())
-    mms = int(sp_2.get())
-    pita_chips = int(sp_3.get())
-    orange_juice = int(sp_4.get())
-    water = int(sp_5.get())
-    user_snack_temp_list = snacks_tool(popcorn, mms, pita_chips, orange_juice, water)
-    if popcorn == 0 and mms == 0 and pita_chips == 0 and orange_juice == 0 and water == 0:
+    chosen_popcorn = int(sp_1.get())
+    chosen_mms = int(sp_2.get())
+    chosen_pita_chips = int(sp_3.get())
+    chosen_orange_juice = int(sp_4.get())
+    chosen_water = int(sp_5.get())
+    user_snack_temp_list = snacks_tool(chosen_popcorn, chosen_mms, chosen_pita_chips, chosen_orange_juice, chosen_water)
+    if chosen_popcorn == 0 and chosen_mms == 0 and chosen_pita_chips == 0 and chosen_orange_juice == 0 and\
+            chosen_water == 0:
         print("\033[3mYou have not chosen any snacks\033[0m\n")
     else:
         print("\033[1m\nSnacks chosen:\033[0m\nPopcorn: {}\nM&M's: {}\nPita chips: {}\nOrange Juice: {}\nWater: {}".
-              format(popcorn, mms, pita_chips, orange_juice, water))
+              format(chosen_popcorn, chosen_mms, chosen_pita_chips, chosen_orange_juice, chosen_water))
         print("\nSnacks price: ${:.2f}".format(user_snack_temp_list[0]))
-    popcorn_total.append(popcorn)
-    mms_total.append(mms)
-    pita_chips_total.append(pita_chips)
-    orange_juice_total.append(orange_juice)
-    water_total.append(water)
+    popcorn_total.append(chosen_popcorn)
+    mms_total.append(chosen_mms)
+    pita_chips_total.append(chosen_pita_chips)
+    orange_juice_total.append(chosen_orange_juice)
+    water_total.append(chosen_water)
     snack_profit.append(user_snack_temp_list[1])
     root.destroy()
 
@@ -162,17 +163,21 @@ result = []
 # Total of each snack for pandas data dictionary
 all_names = []
 all_tickets = []
+
+# Lists for snacks
 popcorn_total = []
 mms_total = []
 pita_chips_total = []
 orange_juice_total = []
 water_total = []
+
+# Calculation column lists
 surcharge_total = []
 snack_profit = []
 ticket_profit_list = []
 total_profit = []
 totals = []
-totals_two = []
+totals_updated = []
 
 # VARIABLES
 # Naming constants to remove error
@@ -246,7 +251,7 @@ while tickets > 0:
               "".format(TICKETS - tickets, tickets, ticket_sales, ticket_profit))
         break
     valid = False
-    # When name is valid
+    # When name is not blank
     while not valid:
         # Ask for age
         age_raw = input("\033[1mAge: \033[0m")
@@ -478,13 +483,13 @@ summary_frame = summary_frame.set_index("Item")
 
 # Monetize appropriate values in totals dataframe
 for i in range(0, 5):
-    totals_two.append(totals[i])
+    totals_updated.append(totals[i])
 for j in range(5, 8):
     n = str(summary_frame["Amount"][j])
     n = n.strip("$")
     n = monetize(n)
-    totals_two.append(n)
-summary_frame["Amount"] = totals_two
+    totals_updated.append(n)
+summary_frame["Amount"] = totals_updated
 
 # Create dataframe for profit values per user
 profit_frame = pandas.DataFrame(profit_summary)
