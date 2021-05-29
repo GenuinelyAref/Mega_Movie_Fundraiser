@@ -21,7 +21,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../L2_FRC" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -37,6 +37,7 @@
     <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1oJQkY79oghMVAXmWflrxgNwDk4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -67,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../L2_FRC" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -79,7 +80,7 @@
       <recent name="C:\Users\Aref\Desktop\COM201\Programming\Mega_Movie_Fundraiser" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.MMF Program">
+  <component name="RunManager" selected="Python.00_Base_Component">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,6 +99,27 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
+    </configuration>
+    <configuration name="00_Base_Component" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="L2_FRC_Costs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../L2_FRC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../L2_FRC/00_Base_Component.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="00_MMF_base_v12" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Mega_Movie_Fundraiser" />
@@ -120,19 +142,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="00_MMF_base_v9" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Mega_Movie_Fundraiser" />
+    <configuration name="01_Number_Checker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="L2_FRC_Costs" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../L2_FRC" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_MMF_base_v9.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../L2_FRC/01_Number_Checker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,27 +205,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="zz_sandbox" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Mega_Movie_Fundraiser" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zz_sandbox.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="zz_tkinter_trialling2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Mega_Movie_Fundraiser" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -227,13 +228,15 @@
     </configuration>
     <list>
       <item itemvalue="Python.00_MMF_base_v12" />
-      <item itemvalue="Python.00_MMF_base_v9" />
-      <item itemvalue="Python.zz_sandbox" />
-      <item itemvalue="Python.zz_tkinter_trialling2" />
       <item itemvalue="Python.MMF Program" />
+      <item itemvalue="Python.zz_tkinter_trialling2" />
+      <item itemvalue="Python.01_Number_Checker" />
+      <item itemvalue="Python.00_Base_Component" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.00_Base_Component" />
+        <item itemvalue="Python.01_Number_Checker" />
         <item itemvalue="Python.MMF Program" />
         <item itemvalue="Python.00_MMF_base_v12" />
       </list>

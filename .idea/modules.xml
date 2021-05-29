@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../L2_FRC/.idea/L2_FRC_Costs.iml" filepath="$PROJECT_DIR$/../L2_FRC/.idea/L2_FRC_Costs.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Mega_Movie_Fundraiser.iml" filepath="$PROJECT_DIR$/.idea/Mega_Movie_Fundraiser.iml" />
     </modules>
   </component>
